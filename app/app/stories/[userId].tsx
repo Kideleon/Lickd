@@ -111,7 +111,7 @@ export default function StoryViewer() {
 
       <OptionSheet visible={viewers} onClose={() => { setViewers(false); setPaused(false); }} title="Viewed by" options={[]} />
       {viewers ? (
-        <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0, maxHeight: '60%', backgroundColor: '#171410', borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 16, paddingBottom: insets.bottom + 16 }}>
+        <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0, maxHeight: '60%', backgroundColor: '#151515', borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 16, paddingBottom: insets.bottom + 16 }}>
           <Pressable onPress={() => { setViewers(false); setPaused(false); }} accessibilityLabel="Close viewers"><Text variant="h2" style={{ color: '#fff', marginBottom: 8 }}>Viewed by {vw.data?.length ?? 0}   ✕</Text></Pressable>
           {(vw.data ?? []).map((v) => v.viewer ? <PersonRow key={v.viewer.id} person={v.viewer} onPress={() => { setViewers(false); router.replace(`/user/${v.viewer!.id}`); }} /> : null)}
           {vw.data && vw.data.length === 0 ? <Text style={{ color: '#aaa' }}>No views yet.</Text> : null}

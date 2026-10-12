@@ -78,11 +78,11 @@ export default function Customize() {
         <View style={{ height: draft.layout === 'compact' ? 20 : 64, backgroundColor: accent }} />
         <View style={{ padding: 14 }}>
           <View style={{ marginTop: draft.layout === 'compact' ? 0 : -40 }}><Avatar path={profile?.avatar_path} name={profile?.display_name} size={66} ring={accent} /></View>
-          <Text style={{ fontFamily: fam ?? fonts.heavy, fontSize: 22, color: lightBg ? '#14110A' : '#F5EEDC', marginTop: 6 }}>{profile?.display_name}</Text>
-          <Text variant="small" style={{ color: lightBg ? '#665D49' : '#B3A98F' }}>@{profile?.username}</Text>
+          <Text style={{ fontFamily: fam ?? fonts.heavy, fontSize: 22, color: lightBg ? '#0A0A0A' : '#F7F4EC', marginTop: 6 }}>{profile?.display_name}</Text>
+          <Text variant="small" style={{ color: lightBg ? '#5E5A50' : '#A39F94' }}>@{profile?.username}</Text>
           <View style={{ flexDirection: 'row', gap: 6, marginTop: 10 }}>
             {top8.slice(0, 8).map((id) => <View key={id} style={{ width: 22, height: 22, borderRadius: 8, backgroundColor: accent }} />)}
-            {top8.length === 0 ? <Text variant="caption" style={{ color: lightBg ? '#665D49' : '#B3A98F' }}>Top 8 appears here</Text> : null}
+            {top8.length === 0 ? <Text variant="caption" style={{ color: lightBg ? '#5E5A50' : '#A39F94' }}>Top 8 appears here</Text> : null}
           </View>
           {draft.music_title ? <Text variant="caption" style={{ color: accent, marginTop: 8 }} bold>♪ {draft.music_title}</Text> : null}
         </View>

@@ -50,8 +50,8 @@ export function ProfileView({ userId, isTab }: { userId: string; isTab?: boolean
   const fam = PROFILE_FONTS[cu?.font ?? 'default'];
   // Text color flips if the member picked a light page background.
   const light = /^#(?:[ef][0-9a-f]){3}$/i.test(pageBg) || pageBg.toLowerCase() === '#fff4e0';
-  const ink = light ? '#14110A' : '#F5EEDC';
-  const sub = light ? '#665D49' : '#B3A98F';
+  const ink = light ? '#0A0A0A' : '#F7F4EC';
+  const sub = light ? '#5E5A50' : '#A39F94';
   const layout = cu?.layout ?? 'classic';
 
   const refresh = async () => { await qc.invalidateQueries({ queryKey: ['profile', userId] }); await qc.invalidateQueries({ queryKey: ['friend-requests'] }); };
@@ -96,7 +96,7 @@ export function ProfileView({ userId, isTab }: { userId: string; isTab?: boolean
           <View style={{ width: 44, height: 44, borderRadius: 14, backgroundColor: accent, alignItems: 'center', justifyContent: 'center' }}><Ionicons name="musical-notes" size={24} color="#111" /></View>
           <View style={{ flex: 1 }}>
             <Text variant="caption" tone="muted">On repeat</Text>
-            <Text variant="body" bold numberOfLines={1} style={{ color: light ? '#14110A' : base.text }}>{cu.music_title}</Text>
+            <Text variant="body" bold numberOfLines={1} style={{ color: light ? '#0A0A0A' : base.text }}>{cu.music_title}</Text>
             {cu.music_artist ? <Text variant="small" tone="muted" numberOfLines={1}>{cu.music_artist}</Text> : null}
           </View>
           {cu.music_url ? <Ionicons name="play-circle" size={32} color={accent} /> : null}
