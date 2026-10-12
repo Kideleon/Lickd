@@ -48,7 +48,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setSession(s);
       if (event === 'SIGNED_OUT') { setProfile(null); qc.clear(); clearMediaCache(); }
       // Don't await Supabase calls inside this callback (deadlock risk); defer.
-      if (event === 'SIGNED_IN' || event === 'USER_UPDATED') setTimeout(() => loadProfile(s?.user.id), 0);
+      if (event === 'SIGNED_IN' || event === 'USER_UPDATED') {
+        setLoading(true);
+        setTimeout(async () => { await loadProfile(s?.user.id); setLoading(false); }, 0);
+      }
     });
     return () => { alive = false; sub.subscription.unsubscribe(); };
   }, [loadProfile, qc]);
