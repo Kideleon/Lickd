@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 /**
  * LICKD design tokens.
  * Sticker look: thick edges + hard offset shadows (the MySpace-era "stuck on" feel),
- * built on espresso/tangerine/teal in dark and frosted-sky/ink/tomato in light.
+ * black and gold in dark, ivory and deep gold in light.
  */
 export interface Palette {
   bg: string; surface: string; surface2: string; line: string; edge: string; shadow: string;
@@ -14,14 +14,14 @@ export interface Palette {
 }
 
 export const darkPalette: Palette = {
-  bg: '#17100E', surface: '#241A16', surface2: '#31241E', line: '#4A372E', edge: '#0B0605', shadow: '#000000',
-  text: '#F6EDE6', muted: '#B3A096', primary: '#FF6A3D', onPrimary: '#1A0C06', teal: '#2CC9B8', honey: '#FFC857',
-  danger: '#FF6B7D', success: '#5BD68E', overlay: 'rgba(8,4,3,0.72)',
+  bg: '#0D0C0A', surface: '#171410', surface2: '#231E16', line: '#3A3220', edge: '#6B5521', shadow: '#2A220F',
+  text: '#F5EEDC', muted: '#B3A98F', primary: '#E8B84A', onPrimary: '#14110A', teal: '#7FD1B9', honey: '#F2D37A',
+  danger: '#FF7A70', success: '#6FD99A', overlay: 'rgba(5,4,2,0.75)',
 };
 export const lightPalette: Palette = {
-  bg: '#E9EFF5', surface: '#FFFFFF', surface2: '#DCE6F0', line: '#BCCADB', edge: '#141B28', shadow: '#141B28',
-  text: '#141B28', muted: '#5A6779', primary: '#F2461B', onPrimary: '#FFFFFF', teal: '#0B8A7E', honey: '#E8A100',
-  danger: '#D62F4B', success: '#1E9E5A', overlay: 'rgba(20,27,40,0.55)',
+  bg: '#F7F1E3', surface: '#FFFBF1', surface2: '#EBE2CC', line: '#D3C7A8', edge: '#14110A', shadow: '#14110A',
+  text: '#14110A', muted: '#665D49', primary: '#9A6B00', onPrimary: '#FFFFFF', teal: '#17695A', honey: '#E0A82E',
+  danger: '#B3261E', success: '#1E7F4A', overlay: 'rgba(20,17,10,0.55)',
 };
 
 export const fonts = {
@@ -45,15 +45,15 @@ export const space = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 36 };
 
 /** One-tap looks for a member's own profile. */
 export const PROFILE_THEMES: Record<string, { label: string; accent: string; background: string }> = {
-  tangerine: { label: 'Tangerine', accent: '#FF6A3D', background: '#17100E' },
-  frost: { label: 'Frost', accent: '#F2461B', background: '#E9EFF5' },
-  lagoon: { label: 'Lagoon', accent: '#2CC9B8', background: '#08181A' },
-  honey: { label: 'Honey', accent: '#FFC857', background: '#1A1405' },
-  cherry: { label: 'Cherry', accent: '#FF4D6D', background: '#1E0A10' },
-  lime: { label: 'Lime', accent: '#B7F34A', background: '#10160A' },
+  noir: { label: 'Noir', accent: '#E8B84A', background: '#0D0C0A' },
+  ivory: { label: 'Ivory', accent: '#9A6B00', background: '#F7F1E3' },
+  jade: { label: 'Jade', accent: '#7FD1B9', background: '#07130F' },
+  ember: { label: 'Ember', accent: '#E07A3F', background: '#170D07' },
+  rose: { label: 'Rose', accent: '#E58FA6', background: '#1A0D12' },
+  indigo: { label: 'Indigo', accent: '#9DB0FF', background: '#0B0E1C' },
 };
-export const ACCENTS = ['#FF6A3D', '#F2461B', '#2CC9B8', '#0B8A7E', '#FFC857', '#FF4D6D', '#B7F34A', '#7C9CFF', '#C792EA'];
-export const BACKGROUNDS = ['#17100E', '#08181A', '#1A1405', '#1E0A10', '#10160A', '#0C0C10', '#E9EFF5', '#FFF4E0'];
+export const ACCENTS = ['#E8B84A', '#9A6B00', '#7FD1B9', '#17695A', '#E07A3F', '#E58FA6', '#9DB0FF', '#C9A7EB', '#F5EEDC'];
+export const BACKGROUNDS = ['#0D0C0A', '#07130F', '#170D07', '#1A0D12', '#0B0E1C', '#14110A', '#F7F1E3', '#FFF4E0'];
 
 export type ThemeMode = 'system' | 'light' | 'dark';
 export interface Theme { c: Palette; isDark: boolean; mode: ThemeMode; setMode: (m: ThemeMode) => void; toggle: () => void; }

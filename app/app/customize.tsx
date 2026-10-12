@@ -14,7 +14,7 @@ import { ACCENTS, BACKGROUNDS, PROFILE_FONTS, PROFILE_THEMES, fonts, radius, use
 import type { Customization } from '../src/lib/types';
 
 type Draft = Pick<Customization, 'theme' | 'background_color' | 'background_path' | 'accent_color' | 'font' | 'layout' | 'music_title' | 'music_artist' | 'music_url' | 'featured_paths'>;
-const DEFAULT: Draft = { theme: 'tangerine', background_color: null, background_path: null, accent_color: null, font: 'default', layout: 'classic', music_title: null, music_artist: null, music_url: null, featured_paths: [] };
+const DEFAULT: Draft = { theme: 'noir', background_color: null, background_path: null, accent_color: null, font: 'default', layout: 'classic', music_title: null, music_artist: null, music_url: null, featured_paths: [] };
 
 export default function Customize() {
   const { profile } = useAuth();
@@ -78,11 +78,11 @@ export default function Customize() {
         <View style={{ height: draft.layout === 'compact' ? 20 : 64, backgroundColor: accent }} />
         <View style={{ padding: 14 }}>
           <View style={{ marginTop: draft.layout === 'compact' ? 0 : -40 }}><Avatar path={profile?.avatar_path} name={profile?.display_name} size={66} ring={accent} /></View>
-          <Text style={{ fontFamily: fam ?? fonts.heavy, fontSize: 22, color: lightBg ? '#141B28' : '#F6EDE6', marginTop: 6 }}>{profile?.display_name}</Text>
-          <Text variant="small" style={{ color: lightBg ? '#4B566A' : '#B3A096' }}>@{profile?.username}</Text>
+          <Text style={{ fontFamily: fam ?? fonts.heavy, fontSize: 22, color: lightBg ? '#14110A' : '#F5EEDC', marginTop: 6 }}>{profile?.display_name}</Text>
+          <Text variant="small" style={{ color: lightBg ? '#665D49' : '#B3A98F' }}>@{profile?.username}</Text>
           <View style={{ flexDirection: 'row', gap: 6, marginTop: 10 }}>
             {top8.slice(0, 8).map((id) => <View key={id} style={{ width: 22, height: 22, borderRadius: 8, backgroundColor: accent }} />)}
-            {top8.length === 0 ? <Text variant="caption" style={{ color: lightBg ? '#4B566A' : '#B3A096' }}>Top 8 appears here</Text> : null}
+            {top8.length === 0 ? <Text variant="caption" style={{ color: lightBg ? '#665D49' : '#B3A98F' }}>Top 8 appears here</Text> : null}
           </View>
           {draft.music_title ? <Text variant="caption" style={{ color: accent, marginTop: 8 }} bold>♪ {draft.music_title}</Text> : null}
         </View>

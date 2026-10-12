@@ -16,7 +16,7 @@ export async function registerForPush(uid: string): Promise<void> {
   if (!Device.isDevice) return;
   if (Platform.OS === 'android') {
     await Notifications.setNotificationChannelAsync('default', {
-      name: 'default', importance: Notifications.AndroidImportance.DEFAULT, lightColor: '#FF6A3D',
+      name: 'default', importance: Notifications.AndroidImportance.DEFAULT, lightColor: '#E8B84A',
     });
   }
   let { status } = await Notifications.getPermissionsAsync();

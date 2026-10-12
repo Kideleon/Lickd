@@ -7,9 +7,9 @@
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "icon": "./assets/icon.png",
-    "backgroundColor": "#17100E",
+    "backgroundColor": "#0D0C0A",
     "newArchEnabled": true,
-    "splash": { "image": "./assets/splash.png", "resizeMode": "contain", "backgroundColor": "#17100E" },
+    "splash": { "image": "./assets/splash.png", "resizeMode": "contain", "backgroundColor": "#0D0C0A" },
     "ios": {
       "bundleIdentifier": "com.lickd.app",
       "supportsTablet": false,
@@ -17,7 +17,7 @@
     },
     "android": {
       "package": "com.lickd.app",
-      "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#17100E" }
+      "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#0D0C0A" }
     },
     "plugins": [
       "expo-router",
