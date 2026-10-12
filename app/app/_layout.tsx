@@ -16,6 +16,7 @@ import { ToastProvider, SafetyProvider } from '../src/components/feedback';
 import { Button, Loading, Text, Wordmark } from '../src/components/ui';
 import { isConfigured } from '../src/lib/supabase';
 import { captureError } from '../src/lib/monitoring';
+import { usePushNavigation } from '../src/lib/push';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -32,6 +33,7 @@ function Gate({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const first = segments[0] as string | undefined;
   const second = (segments as string[])[1];
+  usePushNavigation((r) => { if (session && profile?.onboarded) router.push(r as never); });
 
   useEffect(() => {
     if (loading) return;
