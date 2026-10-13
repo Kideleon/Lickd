@@ -9,28 +9,54 @@
     "icon": "./assets/icon.png",
     "backgroundColor": "#0A0A0A",
     "newArchEnabled": true,
-    "splash": { "image": "./assets/splash.png", "resizeMode": "contain", "backgroundColor": "#0A0A0A" },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
     "ios": {
       "bundleIdentifier": "com.lickd.app",
       "supportsTablet": false,
-      "infoPlist": { "ITSAppUsesNonExemptEncryption": false }
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.lickd.app",
-      "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#0A0A0A" }
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0A0A0A"
+      }
     },
     "plugins": [
       "expo-router",
-      ["expo-image-picker", {
-        "photosPermission": "LICKD uses your photos so you can share them on your profile, posts, stories and albums.",
-        "cameraPermission": "LICKD uses your camera so you can take photos and videos to share."
-      }],
-      ["expo-notifications", { "color": "#FF2E93" }]
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "LICKD uses your photos so you can share them on your profile, posts, stories and albums.",
+          "cameraPermission": "LICKD uses your camera so you can take photos and videos to share."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#FF2E93"
+        }
+      ]
     ],
-    "experiments": { "typedRoutes": false, "tsconfigPaths": true },
+    "experiments": {
+      "typedRoutes": false,
+      "tsconfigPaths": true
+    },
     "extra": {
       "router": {},
-      "eas": { "projectId": "REPLACE_WITH_EAS_PROJECT_ID" }
+      "eas": {
+        "projectId": "REPLACE_WITH_EAS_PROJECT_ID"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
     }
   }
 }
