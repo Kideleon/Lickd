@@ -56,7 +56,11 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "single"
+      "output": "single",
+      "name": "LICKD",
+      "shortName": "LICKD",
+      "themeColor": "#0A0A0A",
+      "backgroundColor": "#0A0A0A"
     }
   }
 }
