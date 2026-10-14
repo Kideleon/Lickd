@@ -3,8 +3,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createClient } from '@supabase/supabase-js';
 import { AppState } from 'react-native';
 
-const url = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
-const anon = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
+// Public client values (safe to ship; RLS protects the data). The env vars override them.
+const url = process.env.EXPO_PUBLIC_SUPABASE_URL || 'https://gqwvxigfctylkscgbusr.supabase.co';
+const anon =
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_-weGs4tRGcEaOBDGri_irQ_bRfdUNs7';
 
 /** False until .env is filled in; the app shows a setup screen instead of crashing. */
 export const isConfigured = url.startsWith('http') && anon.length > 20;
